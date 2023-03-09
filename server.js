@@ -8,10 +8,6 @@ const filterdata = require(`./views/data/filters.json`);
 const PORT = 4000;
 app.get(`/`, onHome).listen(PORT, console.log(`Running on port: ${PORT}`));
 
-//error
-// app.use((req, res, next) => {
-// 	res.status(404).send(`sorry can't find that!`);
-// });
 
 //handlebars 
 app.engine(`.hbs`, engine({
@@ -40,9 +36,13 @@ app.get(`/filter`, (req, res) => {
 	res.render(`filter`, { layout: `index` });
 });
 
-app.get(`/overons`, (req, res) => {
-	res.send(`Overons`);
+app.get(`/resultaten`, (req, res) => {
+	res.render(`resultaten`, { layout: `index` });
 });
 
 
+//error
+app.use((req, res, next) => {
+	res.status(404).send(`Oeps, niet gevonden`);
+});
 
