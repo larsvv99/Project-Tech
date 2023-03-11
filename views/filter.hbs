@@ -1,42 +1,76 @@
 <h1>Voorkeuren</h1>
 
-<form id="categorie">
+<form id="categorie" action="/resultaten">
 
-    <input type="checkbox" id="italiaans">
-    <label for="italiaans">
-        <img src="images/Italiaans.jpg">
-        <h2>Italiaans</h2>
-    </label>
+    <fieldset>
+        <h2>Keukens</h2>
+        <div>
 
-    <input type="checkbox" id="koreaans">
-    <label for="koreaans">
-        <img src="images/Koreaans.jpg">
-        <h2>Koreaans</h2>
-    </label>
+            {{>keuken}}
+            <input type="checkbox" name="keuken" value="amerikaans" id="amerikaans">
+            <label for="amerikaans">
+                <img src="images/Amerikaans.jpg">
+                <h2>Amerikaans</h2>
+            </label>
 
-    <input type="checkbox" id="grieks">
-    <label for="grieks">
-        <img src="images/Grieks.jpg">
-        <h2>Grieks</h2>
-    </label>
+            <input type="checkbox" name="keuken" value="frans" id="frans">
+            <label for="frans">
+                <img src="images/Frans.jpg">
+                <h2>Frans</h2>
+            </label>
 
-    <input type="checkbox" id="spaans">
-    <label for="spaans">
-        <img src="images/Spaans.jpg">
-        <h2>Spaans</h2>
-    </label>
+            <input type="checkbox" name="keuken" value="grieks" id="grieks">
+            <label for="grieks">
+                <img src="images/Grieks.jpg">
+                <h2>Grieks</h2>
+            </label>
 
-    <input type="checkbox" id="amerikaans">
-    <label for="amerikaans">
-        <img src="images/Amerikaans.jpg">
-        <h2>Amerikaans</h2>
-    </label>
+            <input type="checkbox" name="keuken" value="italiaans" id="italiaans">
+            <label for="italiaans">
+                <img src="images/Italiaans.jpg">
+                <h2>Italiaans</h2>
+            </label>
 
-    <input type="checkbox" id="frans">
-    <label for="frans">
-        <img src="images/Frans.jpg">
-        <h2>Frans</h2>
-    </label>
+            <input type="checkbox" name="keuken" value="koreaans" id="koreaans">
+            <label for="koreaans">
+                <img src="images/Koreaans.jpg">
+                <h2>Koreaans</h2>
+            </label>
+
+            <input type="checkbox" name="keuken" value="spaans" id="spaans">
+            <label for="spaans">
+                <img src="images/Spaans.jpg">
+                <h2>Spaans</h2>
+            </label>
+        </div>
+    </fieldset>
+    <fieldset>
+        <h2>Dieet</h2>
+        <div>
+            <input type="radio" name="dieet" value="carnivoor" id="carnivoor">
+            <label for="carnivoor">
+                <img src="images/Carnivoor.jpg">
+                <h2>Carnivoor</h2>
+            </label>
+            <input type="radio" name="dieet" value="vegetarier" id="vegetarier">
+            <label for="vegetarier">
+                <img src="images/Vegetarier.jpg">
+                <h2>Vegetariër</h2>
+            </label>
+            <input type="radio" name="dieet" value="pescotarier" id="pescotarier">
+            <label for="pescotarier">
+                <img src="images/Pescotarier.jpg">
+                <h2>Pescotariër</h2>
+            </label>
+            <input type="radio" name="dieet" value="veganist" id="veganist">
+            <label for="veganist">
+                <img src="images/Veganist.jpg">
+                <h2>Veganist</h2>
+            </label>
+        </div>
+    </fieldset>
     <button class="secondarybutton">Vorige</button>
-    <input type="submit" value="Filter" class="mainbutton">
+    <input type="submit" value="submit" class="mainbutton">
+
+
 </form>
