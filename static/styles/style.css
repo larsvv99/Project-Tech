@@ -21,7 +21,7 @@
     --huisstijlkleur-wit: rgb(255, 255, 255);
     --huisstijlkleur-zwart: rgb(0, 0, 0);
     --opacitylayerzwart: rgba(0, 0, 0, 0.3);
-    --huisstijlfont: sans-serif;
+    --huisstijlfont: "futura", sans-serif;
 }
 
 
@@ -264,7 +264,8 @@ input[type="checkbox"] {
 
 #resultaten ul li {
     display: flex;
-    justify-content: center;
+    justify-content: left;
+    flex-direction: column;
     list-style-type: none;
     width: 20em;
     height: 30em;
@@ -276,7 +277,7 @@ input[type="checkbox"] {
     margin-bottom: 5em;
 }
 
-#resultaten ul li div {
+#resultaten ul li div:first-of-type {
     background-color: var(--huisstijlkleur-oranje);
     border-radius: 24px 24px 0 0;
     width: 100%;
@@ -284,6 +285,19 @@ input[type="checkbox"] {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+}
+
+#resultaten ul li div:last-of-type {
+    background-color: var(--huisstijlkleur-wit);
+    border-radius: 0 0 24px 24px;
+    width: 100%;
+    height: 6em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: left;
+    color: var(--huisstijlkleur-grijs);
+    padding: 1em;
 }
 
 #resultaten ul li div h2 {
@@ -295,6 +309,9 @@ input[type="checkbox"] {
     color: var(--huisstijlkleur-grijs);
 }
 
+#resultaten ul li div:last-of-type p {
+    margin: 0;
+}
 
 #resultaten ul li button {
     font-size: 4em;

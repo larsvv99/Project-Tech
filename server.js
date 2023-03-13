@@ -7,8 +7,6 @@ app.use(express.urlencoded({ extended: true }));
 
 
 
-
-
 //connectie
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, console.log(`Running on port: ${PORT}`));
@@ -33,7 +31,6 @@ app.set('views', './views');
 
 //database
 const { MongoClient, ServerApiVersion } = require('mongodb');
-//mongoose.connect(process.env.DB_CONNECTION_STRING, { useNewUrlParser: true, useUnifiedTopology: true });
 const uri = process.env.DB_CONNECTION_STRING;
 
 const client = new MongoClient(
