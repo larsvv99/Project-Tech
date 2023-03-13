@@ -3,13 +3,19 @@ const express = require('express');
 const app = express();
 app.use(express.static('static'));
 const { engine } = require('express-handlebars');
-//const mongoose = require('mongoose');
 app.use(express.urlencoded({ extended: true }));
-//const Keuken = require('./static/js/schemas');
+
+
+
+
 
 //connectie
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, console.log(`Running on port: ${PORT}`));
+
+
+
+
 
 //handlebars 
 app.engine('.hbs', engine({
@@ -20,6 +26,10 @@ app.engine('.hbs', engine({
 }));
 app.set('view engine', '.hbs');
 app.set('views', './views');
+
+
+
+
 
 //database
 const { MongoClient, ServerApiVersion } = require('mongodb');
@@ -38,10 +48,8 @@ client.connect()
 app.get('/database', async (req, res) => {
 	const db = client.db('Fooduo').collection('keuken');
 	const example = await db.find({}).toArray();
-	res.json({
-		status: 'success',
-		data: example
-	});
+
+	res.render('test', { layout: 'index', title: 'Test', data: example });
 });
 
 
@@ -54,23 +62,25 @@ app.get('/', (req, res) => {
 	res.render('main', { layout: 'index', title: 'Homepage' });
 });
 
-app.get('/filter', (req, res) => {
-	res.render('filter', { layout: 'index', title: 'Filter' });
+app.post('/datatoevoegen', async (req, res) => {
+	const db = client.db('Fooduo').collection('personen');
+	const persoonToevoegen = await db.insertOne(req.body);
+	res.render('datatoevoegen', { layout: 'index', title: 'Start', data: persoonToevoegen });
 });
 
-app.get('/resultaten', (req, res) => {
-	res.render('resultaten', { layout: 'index', title: 'Resultaten' });
-});
-
-app.get('/test', async (req, res) => {
+app.get('/filter', async (req, res) => {
 	const db = client.db('Fooduo').collection('keuken');
-	const example = await db.find({}).toArray();
-	res.json({
-		status: 'success',
-		data: example
-	});
-	res.render('test', { layout: 'index' });
+	const zoekKeukens = await db.find({}).toArray();
+	res.render('filter', { layout: 'index', title: 'Filter', data: zoekKeukens });
 });
+
+app.post('/resultaten', async (req, res) => {
+	const db = client.db('Fooduo').collection('personen');
+	const filterPersonen = await db.find({ keuken: req.body.keuken, dieet: req.body.dieet }).toArray();
+	res.render('resultaten', { layout: 'index', title: 'Resultaten', data: filterPersonen });
+});
+
+
 
 app.get('/*', (req, res) => {
 	res.json({
@@ -78,3 +88,4 @@ app.get('/*', (req, res) => {
 		message: '404 - page not found'
 	});
 });
+

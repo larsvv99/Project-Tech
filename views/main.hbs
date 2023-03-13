@@ -1,18 +1,45 @@
-<section id="main">
-    <ul>
-        <li>
-            <h2>Samen koken</h2>
-        </li>
-        <li>
-            <h2>Uiteten</h2>
-        </li>
-    </ul>
-</section>
+<h2>Keuken toevoegen</h2>
+<form method="POST" action="/datatoevoegen">
+    <label for="voornaam">Voornaam:</label>
+    <input type="text" id="voornaam" name="voornaam">
 
-<div>
-    <label for="file">Voorkeuren</label>
-    <progress id="file" value="32" max="100"> 32% </progress>
-</div>
+    <label for="leeftijd">Leeftijd:</label>
+    <input type="number" id="leeftijd" name="leeftijd" min="18" max="130">
 
-<footer>
-</footer>
+
+    <label for="keuken">Kies een keuken:</label>
+    <select id="keuken" name="keuken">
+        <option value="amerikaans">Amerikaans</option>
+        <option value="frans">Frans</option>
+        <option value="grieks">Grieks</option>
+        <option value="italiaans">Italiaans</option>
+        <option value="koreaans">Koreaans</option>
+        <option value="spaans">Spaans</option>
+    </select>
+
+    <label for="dieet">Kies een dieet:</label>
+    <select id="dieet" name="dieet">
+        <option value="carnivoor">Carnivoor</option>
+        <option value="vegetarier">Vegetariër</option>
+        <option value="pescotarier">Pescotariër</option>
+        <option value="veganist">Veganist</option>
+    </select>
+
+    <p>Geslacht:</p>
+    <label for="man">
+        Man <input type="radio" id="man" name="geslacht" value="man">
+    </label>
+    <label for="vrouw">
+        Vrouw <input type="radio" id="vrouw" name="geslacht" value="vrouw">
+    </label>
+
+    <p>Voorkeur:</p>
+    <label for="samen koken">
+        Samen koken <input type="radio" id="samen koken" name="voorkeur" value="samen koken">
+    </label>
+    <label for="uiteten">
+        Uiteten <input type="radio" id="uiteten" name="voorkeur" value="uiteten">
+    </label>
+
+    <input type="submit" value="Toevoegen" class="mainbutton">
+</form>

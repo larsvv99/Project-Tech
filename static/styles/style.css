@@ -57,6 +57,14 @@ li {
     list-style-type: none;
 }
 
+a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+
 /* BUTTONS */
 
 .mainbutton {
@@ -71,6 +79,8 @@ li {
     font-size: 1.1em;
     border: none;
     transition-duration: 0.2s;
+    text-align: center;
+
 }
 
 .mainbutton:hover {
@@ -138,6 +148,13 @@ header h1 {
 
 /* SECTION KEUZE*/
 
+form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
 
 section {
     height: 90%;
@@ -146,54 +163,7 @@ section {
     display: flex;
 }
 
-#main ul {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-    margin-block-start: 0;
-    margin-block-end: 0;
-    padding-inline-start: 0;
-}
 
-#main ul li {
-    list-style-type: none;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 12em;
-    color: var(--huisstijlkleur-wit);
-    font-size: 2em;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    max-width: 25em;
-    text-shadow: 0 0 10px var(--huisstijlkleur-grijs);
-}
-
-#main ul li:hover {
-    transform: scale(1.01);
-    transition-duration: 500ms;
-    box-shadow: 0 0 30px var(--huisstijlkleur-grijs);
-}
-
-#main ul li:nth-of-type(1) {
-    background-image: url("../images/samenkoken.jpg");
-    border-radius: 2em 2em 0 0;
-}
-
-#main ul li:nth-of-type(2) {
-    background-image: url("../images/uiteten.jpg");
-    border-radius: 0 0 2em 2em;
-
-}
-
-progress {
-    background-color: var(--huisstijlkleur-oranje);
-}
 
 
 
@@ -225,6 +195,7 @@ fieldset div {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    text-transform: capitalize;
 }
 
 #categorie label {
@@ -242,7 +213,7 @@ input[type="checkbox"] {
     position: fixed;
 }
 
-input[type="radio"] {
+#categorie input[type="radio"] {
     opacity: 0;
     width: 0;
     height: 0;
@@ -302,6 +273,7 @@ input[type="radio"] {
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
+    margin-bottom: 5em;
 }
 
 #resultaten ul li div {
