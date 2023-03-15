@@ -255,6 +255,7 @@ input[type="checkbox"] {
     position: fixed;
     background-color: var(--huisstijlkleur-wit);
     border-radius: 30px;
+    top: 20%;
     left: 50%;
     transform: translateX(-50%);
 }
