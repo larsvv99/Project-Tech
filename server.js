@@ -7,6 +7,8 @@ app.use(express.urlencoded({ extended: true }));
 
 
 
+
+
 //connectie
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, console.log(`Running on port: ${PORT}`));
@@ -75,10 +77,6 @@ app.post('/resultaten', async (req, res) => {
 	const db = client.db('Fooduo').collection('personen');
 	const filterPersonen = await db.find({ keuken: req.body.keuken, dieet: req.body.dieet }).toArray();
 	res.render('resultaten', { layout: 'index', title: 'Resultaten', data: filterPersonen });
-});
-
-app.get('/test', (req, res) => {
-	res.render('test', { layout: 'index', title: 'Homepage' });
 });
 
 app.get('/*', (req, res) => {
