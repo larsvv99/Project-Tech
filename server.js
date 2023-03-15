@@ -77,12 +77,14 @@ app.post('/resultaten', async (req, res) => {
 	res.render('resultaten', { layout: 'index', title: 'Resultaten', data: filterPersonen });
 });
 
-
+app.get('/test', (req, res) => {
+	res.render('test', { layout: 'index', title: 'Homepage' });
+});
 
 app.get('/*', (req, res) => {
-	res.json({
-		status: 'FAILED',
-		message: '404 - page not found'
-	});
+	res.render('404', { layout: 'index', title: 'Niet gevonden' });
+
 });
+
+
 

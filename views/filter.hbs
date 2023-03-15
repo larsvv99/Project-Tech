@@ -1,6 +1,6 @@
 <h2>Voorkeuren</h2>
 
-<form id="categorie" action="/resultaten" method="POST">
+<form name="formfilter" id="categorie" action="/resultaten" method="POST" onsubmit="geefMelding()">
 
     <fieldset>
         <h3>Keukens</h3>
@@ -11,7 +11,7 @@
     <fieldset>
         <h3>Dieet</h3>
         <div>
-            <input type="radio" name="dieet" value="carnivoor" id="carnivoor">
+            <input type="radio" name="dieet" value="carnivoor" id="carnivoor" required>
             <label for="carnivoor">
                 <img src="images/Carnivoor.jpg">
                 <h4>Carnivoor</h4>
@@ -35,6 +35,6 @@
     </fieldset>
     <a href="http://localhost:4000/" class="secondarybutton">Vorige</a>
     <input type="submit" value="Filter" class="mainbutton">
-
-
 </form>
+
+<script src="/js/filter.js"></script>

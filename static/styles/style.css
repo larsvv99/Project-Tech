@@ -64,6 +64,11 @@ a {
     text-decoration: none;
 }
 
+img {
+    border: var(--huisstijlkleur-wit) 5px solid;
+    border-radius: 30px;
+}
+
 
 /* BUTTONS */
 
@@ -181,6 +186,7 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    margin-bottom: 5em;
 }
 
 fieldset {
@@ -243,6 +249,35 @@ input[type="checkbox"] {
     border: var(--huisstijlkleur-oranje) 5px solid;
     border-radius: 30px;
     transition-duration: 0.2s;
+}
+
+#melding {
+    position: fixed;
+    background-color: var(--huisstijlkleur-wit);
+    border-radius: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.animatietijd {
+    animation-name: melding;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes melding {
+    0% {
+        visibility: visible;
+    }
+
+    75% {
+        visibility: visible;
+    }
+
+    100% {
+        visibility: hidden;
+    }
 }
 
 
@@ -331,6 +366,17 @@ input[type="checkbox"] {
     right: -1.4em;
 }
 
+#resultaten ul li img {
+    border: none;
+    border-radius: 0;
+}
 
 
-/* .......... */
+
+/*********************/
+/* TOEGEVOEGD PAGINA */
+/*********************/
+
+#randomimg {
+    width: 20em;
+}

@@ -1,14 +1,15 @@
-<h2>Keuken toevoegen</h2>
+<h2>Persoon toevoegen</h2>
 <form method="POST" action="/datatoevoegen">
     <label for="voornaam">Voornaam:</label>
-    <input type="text" id="voornaam" name="voornaam">
+    <input type="text" id="voornaam" name="voornaam" required>
 
     <label for="leeftijd">Leeftijd:</label>
-    <input type="number" id="leeftijd" name="leeftijd" min="18" max="130">
+    <input type="number" id="leeftijd" name="leeftijd" min="18" max="130" required>
 
 
     <label for="keuken">Kies een keuken:</label>
     <select id="keuken" name="keuken">
+        <option value="" disabled selected>Selecteer keuken</option>
         <option value="amerikaans">Amerikaans</option>
         <option value="frans">Frans</option>
         <option value="grieks">Grieks</option>
@@ -19,6 +20,7 @@
 
     <label for="dieet">Kies een dieet:</label>
     <select id="dieet" name="dieet">
+        <option value="" disabled selected>Selecteer dieet</option>
         <option value="carnivoor">Carnivoor</option>
         <option value="vegetarier">Vegetariër</option>
         <option value="pescotarier">Pescotariër</option>
@@ -27,7 +29,7 @@
 
     <p>Geslacht:</p>
     <label for="man">
-        Man <input type="radio" id="man" name="geslacht" value="man">
+        Man <input type="radio" id="man" name="geslacht" value="man" required>
     </label>
     <label for="vrouw">
         Vrouw <input type="radio" id="vrouw" name="geslacht" value="vrouw">
@@ -35,7 +37,7 @@
 
     <p>Voorkeur:</p>
     <label for="samen koken">
-        Samen koken <input type="radio" id="samen koken" name="voorkeur" value="samen koken">
+        Samen koken <input type="radio" id="samen koken" name="voorkeur" value="samen koken" required>
     </label>
     <label for="uiteten">
         Uiteten <input type="radio" id="uiteten" name="voorkeur" value="uiteten">
